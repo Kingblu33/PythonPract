@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar bg-light" >
+            <h3 class="navbar-brand">{{food.first_name}}  {{food.last_name}}</h3>
+            <a href='/default' class="btn btn-primary nav-item">Create</a>
+            <a href="/" class="btn btn-danger nav-item">Logout</a>
+
+        </div>
+    
+
+        <table class="table bg-light">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>under 30 minutes</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for i in food.recipe%}
+                <tr>
+                    <td>{{i.name}}</td>
+                    <td>{{i.under_30}}</td>
+                    <td><a href="/recipes/edit//{{i.id}}">Edit </a> <a href="/recipes/{{i.id}}">Show </a><a href="/delete/{{i.id}}">delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+
+        </table>
+        
+
+    </div>
+    
+</body>
+</html
